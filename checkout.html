@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout</title>
+</head>
+    <body>
+        <!--
+                   Make all fields required except for the checkbox
+            Add an input for credit card number, expiration month/year, and security code
+            Add inputs for the billing address
+            Add a checkbox that says “Keep this credit card on file for future transactions”
+            The submit button’s text should say “Buy Now!”
+        -->
+        <form action="https://request-inspector.glitch.me" method="post" accept-charset="UTF-8">
+            <h2>Card information</h2>
+            <h3>Credit Card Number*:</h3>
+            <input type="text" id="ccn" name="ccn" placeholder="1234 1234 1234 1234" required>
+            <h3>Experiation Date*:</h3>
+            <input type="text" id="exp" name="exp" placeholder="9/24" required>
+            <h3>Security Code* (<em>3 digit number on the back of the card</em>):</h3>
+            <input type="password" id="sc" name="sc" placeholder="***" required>
+            <div>
+                <h2>Billing Address</h2>
+                <h3>Street address</h3>
+                <input type="text" id="sa" name="sa" placeholder="123 Street Adress st." required>
+                <h3>City</h3>
+                <input type="text" id="city" name="city" placeholder="San Antonio" required>
+                <h3>State</h3>
+                <select name="State">
+                    <option value="Texas">TX</option>
+                    <option value="Texas">TX</option>
+                    <option value="Texas">TX</option>
+                    <option value="Texas">TX</option>
+                    <option value="Texas">TX</option>
+                    <option value="Texas">TX</option>
+                    <option value="Texas">TX</option>
+                    <option value="Texas">TX</option>
+                    <option value="Texas">TX</option>
+                    <option value="Texas">TX</option>
+                    <option value="Texas">TX</option>
+                    <option value="Texas">TX</option>
+                    <option value="Texas">TX</option>
+                    <option value="Texas">TX</option>
+                    <option value="Texas">TX</option>
+                    <option value="Texas">TX</option>
+                    <option value="Texas">TX</option>
+                    <option value="Texas">TX</option>
+                    <option value="Texas">TX</option>
+                </select>
+            </div>
+            <input name="cc_info" value="true" type="checkbox" checked>Keep this credit card on file for future transactions
+            <div>
+            <button type="submit" name="Buy Now!">Buy Now!</button>
+            </div>
+
+         </form>
+    </body>
+</html>

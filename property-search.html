@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Property-Search</title>
+    <style>
+        .range_finder{
+            letter-spacing: 8px;
+            font-size: 16px;
+        }
+
+    </style>
+</head>
+<body>
+    <form action="https://request-inspector.glitch.me" method="GET">
+        <h3>Property Type</h3>
+            <input type="text" id="property_type" name="property_type" placeholder="House/Apartment/etc..." required>
+        <h3>Square footage</h3>
+            <input type="text" id="sqft" name="sqft" placeholder="Desired square footage">
+        <h3>Minimum Price</h3>
+            <input type="text" id="min_price" name="min_price" placeholder="min. price">
+        <h3>Maximum Price</h3>
+            <input type="text" id="max_price" name="max_price" placeholder="max. price">
+        <h3>Zipcode</h3>
+            <input type="text" id="zip" name="zip" placeholder="78540">
+        <h3>Bedrooms</h3>
+        <h6 class="range_finder">1   2   3   4   5   6</h6>
+            <input type="range" id="range_finder" name="range_finder" title="Bedrooms">
+        <h3>Desired number of bathrooms</h3>
+        <h6 class="range_finder">1   2   3   4   5   6</h6>
+            <input type="range" id="bathroom_finder" name="range_finder" title="Bedrooms">
+    </form>
+    <button type="submit" value="search">Search</button>
+</body>
+</html>

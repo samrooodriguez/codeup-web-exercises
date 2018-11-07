@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+    <form action="https://request-inspector.glitch.me" method="post">
+        <h3>Username:*</h3>
+         <input type="text" id="username" name="username" placeholder="username" required>
+        <h3>Email:*</h3>
+            <input type="text" id="email" name="username" placeholder="email" required>
+        <h3>Password:*</h3>
+            <input type="password" id="password" name="password" placeholder="password" required>
+        <div>
+        <label class="keepme">
+            <input name="keepme" value="yes" type="checkbox" checked>Keep me logged in for 2 weeks
+        </label>
+        </div>
+        <button type="submit" value="login">Login</button>
+        <div>
+            <h5><em>everything with an "*" is a required field</em></h5>
+        </div>
+    </form>
+</body>
+</html>
