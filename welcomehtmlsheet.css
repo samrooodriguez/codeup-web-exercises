@@ -1,3 +1,48 @@
-h1 {
-    color: #violet;
+#main-header {
+    color: black;
+    text-align: center;
+    font-size: 280px;
+    position: center;
 }
+
+h2 {
+    color:whitesmoke;
+    text-decoration: underline;
+    border-image: linear-gradient(#f6b73c, #4d9f0c) 30;
+    font-size: 150px;
+}
+body {
+    background-image: url("images/orange-background.jpeg");
+    background-blend-mode: lighten;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-style: solid;
+    border-image: url("images/codeup-arrow.png")25% round;
+    border-image-width: 100px;
+}
+.offset{
+    color: white;
+}
+.dy {
+    color: blue;
+    font-size: 310px;
+}
+li {
+    font-size: 80px;
+}
+a {
+    link: hover;
+}
+
+#tbl {
+    border: 5px solid;
+
+}
+
+/*background: url(images/bg.jpg) no-repeat center center fixed;*/
+/*-webkit-background-size: cover;*/
+/*-moz-background-size: cover;*/
+/*-o-background-size: cover;*/
+/*background-size: cover;*/
+
+
