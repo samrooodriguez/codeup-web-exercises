@@ -1,0 +1,130 @@
+/*Small devices (tablets, 768px and up)*/
+@media screen and (max-width:900px) {
+
+.alert-info {
+    background-color: #D6FEFE;
+    padding: .5em;
+    border: solid 1px lightgrey;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+h1 {
+
+    text-align: center;
+}
+img {
+    width: 375px;
+}
+li {
+    margin: .5em 1em;
+    padding: .5em;
+    border: 1px solid white;
+    list-style-type: none;
+    text-align: center;
+    background-color: #CCC;
+}
+body {
+    padding: 12px;
+}
+.nav-links {
+    padding: 0;
+}
+}
+ /*Medium devices (desktops, 992px and up) */
+@media screen and (min-width:992px) {
+    .alert-info {
+        display: none;
+    }
+ h1 {
+        font-family: Arial, monospace;
+        float: left;
+    }
+
+    ul li {
+        list-style-type: none;
+        display: inline-block;
+        padding: 1em;
+        float: right;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    #main {
+        float: left;
+        width: 60%;
+    }
+
+    .sub-section {
+        float: right;
+        width: 30%;
+
+    }
+    .main p .sub-section p {
+        padding: 1em 1em 0 0;
+    }
+    .main h2 .sub-section h2 {
+        margin: 0;
+    }
+
+    body {
+        padding: 25px;
+    }
+    footer {
+        clear:both;
+        padding-top: 300px;
+ }
+
+ }
+
+/* Large devices (large desktops, 1200px and up)*/
+@media screen and (min-width:900px) {
+    h1 {
+        font-family: Arial, monospace;
+        float: left;
+    }
+
+    ul li {
+        list-style-type: none;
+        display: inline-block;
+        padding: 1em;
+        float: right;
+        background-color: white;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    #main {
+        float: left;
+        width: 60%;
+    }
+
+    .sub-section {
+        float: right;
+        width: 30%;
+
+    }
+    .main p .sub-section p {
+        padding: 1em 1em 0 0;
+    }
+    .main h2 .sub-section h2 {
+        margin: 0;
+    }
+
+    body {
+        padding: 25px;
+    }
+    footer {
+        clear:both;
+        padding-top: 300px;
+    }
+    .nav-link {
+        padding: 0;
+        background-color: white;
+    }
+}
+

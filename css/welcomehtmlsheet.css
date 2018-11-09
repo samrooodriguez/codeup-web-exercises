@@ -12,12 +12,12 @@ h2 {
     font-size: 150px;
 }
 body {
-    background-image: url("images/orange-background.jpeg");
+    background-image: url("../images/orange-background.jpeg");
     background-blend-mode: lighten;
     background-repeat: no-repeat;
     background-size: cover;
     border-style: solid;
-    border-image: url("images/codeup-arrow.png")25% round;
+    border-image: url("../images/codeup-arrow.png")25% round;
     border-image-width: 100px;
 }
 .offset{
