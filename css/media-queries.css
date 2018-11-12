@@ -14,10 +14,8 @@ h1 {
     text-align: center;
 }
 img {
-    width: 375px;
 }
 li {
-    margin: .5em 1em;
     padding: .5em;
     border: 1px solid white;
     list-style-type: none;
@@ -48,18 +46,15 @@ body {
         float: right;
     }
 
-    img {
-        width: 100%;
-    }
 
     #main {
         float: left;
-        width: 60%;
+
     }
 
     .sub-section {
         float: right;
-        width: 30%;
+
 
     }
     .main p .sub-section p {
@@ -95,17 +90,17 @@ body {
     }
 
     img {
-        width: 100%;
+
     }
 
     #main {
         float: left;
-        width: 60%;
+
     }
 
     .sub-section {
         float: right;
-        width: 30%;
+
 
     }
     .main p .sub-section p {
