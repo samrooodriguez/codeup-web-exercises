@@ -1,5 +1,8 @@
 /*Small devices (tablets, 768px and up)*/
 @media screen and (max-width:900px) {
+* {
+    box-sizing: border-box;
+}
 
 .alert-info {
     background-color: #D6FEFE;
@@ -31,6 +34,9 @@ body {
 }
  /*Medium devices (desktops, 992px and up) */
 @media screen and (min-width:992px) {
+    * {
+        box-sizing: border-box;
+    }
     .alert-info {
         display: none;
     }
@@ -76,17 +82,25 @@ body {
 
 /* Large devices (large desktops, 1200px and up)*/
 @media screen and (min-width:900px) {
+    * {
+        box-sizing: border-box;
+    }
     h1 {
         font-family: Arial, monospace;
         float: left;
     }
 
-    ul li {
+    .nav-link li {
         list-style-type: none;
-        display: inline-block;
+        display: inline;
         padding: 1em;
-        float: right;
         background-color: white;
+        text-align: right;
+        position: absolute;
+        right: 10px;
+    }
+    ul li {
+        float: right;
     }
 
     img {
