@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>external js</title>
+</head>
+<style>
+    h2 {
+        font-family: Courier;
+    }
+
+    .landon {
+        font-style: italic;
+        color: steelblue;
+    }
+
+    .q1 {
+        background-color: #0fb784;
+    }
+
+    .q2 {
+        background-color: darkgrey;
+    }
+
+    .q3 {
+        background-color: #0fb784;
+    }
+
+    .q4 {
+        background-color: darkgrey;
+    }
+
+    .calculator {
+        background-color: #0fb784;
+        padding-bottom: 3em;
+    }
+
+    body {
+        background-color: black;
+    }
+
+    .header {
+        font-size: 4em;
+        background-color: black;
+        color: white;
+        text-align: center;
+    }
+</style>
+<body>
+         <div class="header">
+             <h1>Super Mega Quiz</h1>
+         </div>
+                <div class="q1">
+                     <h2>You have rented some movies for your kids: The little mermaid (for 3 days), Brother Bear (for 5 days, they
+                    love
+                    it), and Hercules (1 day, you don't know yet if they're going to like it). If price for a movie per day is
+                    $3,
+                    how much will you have to pay?</h2>
+        <br>
+            <input type="radio" name="choice" value="26" onclick="wrongAnswer()"> 26
+        <br>
+                 <input type="radio" name="choice" value="27" onclick="correctAnswer()"> 27
+        <br>
+                        <input type="radio" name="choice" value="28" onclick="wrongAnswer()"> 28
+        <br>
+                             <input type="radio" name="choice" value="None of These" onclick="wrongAnswer()"> None of These
+    </div>
+         <div class="q2">
+            <h2 class="landon">Is Landon a spy?</h2>
+        <br>
+                <input type="radio" name="choice" value="yes" onclick="correctAnswer()"> Yes!
+        <br>
+                    <input type="radio" name="choice" value="yes" onclick="correctAnswer()"> Yes!
+        <br>
+                        <input type="radio" name="choice" value="yes" onclick="correctAnswer()"> Yes!
+        </div>
+            <div class="q3">
+                    <h2>How long exactly, has Landon been a spy?</h2>
+        <br>
+                        <input type="radio" name="choice" value="1yr" onclick="wrongAnswer()">One Whole Year
+        <br>
+                            <input type="radio" name="choice" value="1yr" onclick="wrongAnswer()">6 Months
+        <br>
+                                <input type="radio" name="choice" value="1yr" onclick="correctAnswer()">I don't even know who Landon is
+    </div>
+                <div class="q4">
+                    <h2>Will Landon ever stop being a spy?</h2>
+                        <input type="radio" name="choice" value="no" onclick="wrongAnswer()"> No
+        <br>
+                            <input type="radio" name="choice" value="no_never" onclick="wrongAnswer()"> Not in this lifetime
+        <br>
+                                <input type="radio" name="choice" value="ok_maybe" onclick="correctAnswer()"> ......okay maybe
+    </div>
+
+            <div class="calculator">
+                <h3>Calculator (for calculating how much landon is actually a spy)</h3>
+                    <input type="text" name="a" value="a">
+        x
+                        <input type="text" name="b" value="b">
+        =
+                            <input type="text" name="c" value="c">
+    </div>
+
+    <!--JAVASCRIPT--><!--JAVASCRIPT--><!--JAVASCRIPT--><!--JAVASCRIPT--><!--JAVASCRIPT--><!--JAVASCRIPT-->
+    <!--JAVASCRIPT--><!--JAVASCRIPT-->
+
+    <script>
+
+        "use strict";
+        console.log("Hello from external JavaScript!");
+        prompt("Enter Username");
+        prompt("Enter Password");
+
+        var times = function calcuLator() {
+
+        }
+
+        function wrongAnswer() {
+            return alert("Wrong Answer!")
+        }
+
+        function correctAnswer() {
+            return alert("Correct Answer!")
+
+        }
+
+        function calculator(a, b) {
+            return a * b;
+        }
+
+    </script>
+        </body>
+</html>

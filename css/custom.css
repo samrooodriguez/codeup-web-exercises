@@ -4,6 +4,7 @@
 }
 .navbar-sign-in {
     border:0;
+    background-color: transparent;
 
 }
 .jumbotron {
@@ -42,8 +43,16 @@ h1 {
     padding-right: 1.3em;
     width: 100%;
 }
+ .fa-user {
+    font-size: 1em;
+}
 
-
+.fa-apple {
+    font-size: 1.5em;
+}
+.pizza-logo {
+    size: 1em;
+}
 /*           <div class="card" style="width: 100%;">
                 <div class="card-header">
                     Featured
