@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>For Fun</title>
+</head>
+<style>
+    body {
+        font-family: monospace;
+        background-color: black;
+        color: white;
+    }
+    h5 {
+        background-color: #E6ECF0;
+        font-size: 3em;
+        color: steelblue;
+        padding: 1em;
+        border: 1em;
+        margin: 1em;
+        text-align: center;
+    }
+
+    .test-buttons {
+        align-content: center;
+        font-size: 1.5em;
+        letter-spacing: .3em;
+    }
+    .top {
+        padding-top: 3em;
+    }
+</style>
+<body>
+
+
+    <h5>Testing out functions in html</h5>
+
+
+    <h4 class="top">This is question number One</h4>
+        <label class="test-buttons">
+            Answer One<input type="radio" name="radio1" onclick="wrongAnswer()">
+                Answer Two<input type="radio" name="radio1" onclick="notCorrectAnswer()">
+                    Answer Three<input type="radio" name="radio1" onclick="correctAnswer()">
+                        Answer Four<input type="radio" name="radio1" onclick="wrongAnswer()">
+        </label>
+    <hr>
+    <h4>This is question number Two</h4>
+            <label class="test-buttons">
+                Wrong<input type="radio" name="radio2" onclick="wrongAnswer()">
+                    Wrong <input type="radio" name="radio2" onclick="wrongAnswer()">
+                        Wrong <input type="radio" name="radio2" onclick="wrongAnswer()">
+                            Wrong <input type="radio" name="radio2" onclick="wrongAnswer()">
+            </label>
+    <hr>
+    <h4>This is question number Three</h4>
+         <label class="test-buttons">
+             Correct<input type="radio" name="radio2" onclick="correctAnswer()">
+                 Correct <input type="radio" name="radio2" onclick="correctAnswer()">
+                      Correct <input type="radio" name="radio2" onclick="correctAnswer()">
+                         Correct <input type="radio" name="radio2" onclick="correctAnswer()">
+         </label>
+    <script>
+        function wrongAnswer() {
+            return alert("Oops! Wrong Answer");
+        }
+        function correctAnswer() {
+            return alert("Good job! Correct Answer");
+        }
+        function notCorrectAnswer() {
+            return alert("So close! Still wrong though.");
+        }
+
+    </script>
+</body>
+</html>

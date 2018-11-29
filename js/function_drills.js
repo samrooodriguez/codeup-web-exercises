@@ -27,9 +27,15 @@ function sayString(string) {
 }
 console.log(sayString('code up'));
 //  Functions using conditionals but not loops or arrays: #################################################################################
-function isOdd(number) {
-    return "odd";
-}
+isOdd
+function isOdd(input) {
+    if (parseFloat(input) % 1 === 0){
+        return true;
+    }
+    else {
+        return false;
+    }
+
 console.log(isOdd(3));
 
 function isEven(number){
@@ -38,12 +44,17 @@ function isEven(number){
 console.log(isEven(2));
 
 function identity(input){
-    return "identity";
+    return input;
 }
 console.log(identity('sam'));
 
 function isFive(input) {
-    return (input = 5);
+    if(input === 5){
+    return true;
+    }
+    else {
+        return false;
+    }
 }
 console.log(isFive(5));
 
@@ -53,6 +64,14 @@ function addFive(sum){
 console.log(addFive(5));
 
 function isMultipleOfFive(input) {
-    return true;
+    if (input == % 5);{
+        return true;
+    else {
+        return false;
+    }
 
 }
+function isTrue(input) {
+    return typeof input === true;
+}
+console.log(isTrue(true))
