@@ -9,7 +9,7 @@
      * planetsArray.
      * console.log planetsArray to check your work
      */
-    var planetsArray = planetsString.split(' , ');
+    var planetsArray = planetsString.split(' | ');
     console.log(planetsArray);
 
 
@@ -28,5 +28,5 @@
 
 //    BONUS
 
-    
+
 })();
