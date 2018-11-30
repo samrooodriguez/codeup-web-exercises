@@ -29,6 +29,9 @@
 //    would probably be useful to make it more legible upon display.
 
 //    BONUS
+    var htmlString = "<ul><li>";
+    htmlString += planetsArray.join("</li><li>");
+    document.body.innerHTML += htmlString;
 
 
 })();
