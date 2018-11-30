@@ -1,6 +1,15 @@
+body {
+    background-color: lightgrey;
+    font-family: Raleway, monospace;
+    margin: 0;
+}
 .main-header {
     text-align: center;
-    font-family: monospace;
+    font-family: Raleway, monospace;
     font-size: 4em;
-
+    letter-spacing: .85em;
+}
+.main-info {
+    text-align: center;
+    font-weight: bold;
 }
