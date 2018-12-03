@@ -4,7 +4,7 @@
         radius: 5,
         getArea: function () {
             // TODO: complete this method
-            return Math.PI(circle.radius);
+            return circle.radius * Math.PI;
             },
 
         logInfo: function (doRounding) {
