@@ -3,8 +3,8 @@
 <head>
     <style type="text/css">
         #map-canvas {
-            width: 770px;
-            height: 481px;
+            width: 100%;
+            height: 750px;
         }
     </style>
 </head>
@@ -12,9 +12,10 @@
     <!-- div to hold map -->
     <div id="map-canvas"></div>
     <!-- Load the Google Maps API [DON'T FORGET TO USE A KEY] -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbvWAIf0BwbDtlx1XbK8F3tCg9JTDjoko"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_70YXvXz-8j3-d7PGY8DKkfxtIvyW9dg"></script>
     <!-- Script to show address on map -->
     <script type="text/javascript">
+
         (function () {
             "use strict";
             // Set our map options
@@ -24,48 +25,66 @@
                 center: {lat: 29.4154934, lng: -98.5079414},
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             };
+            var geocoder = new google.maps.Geocoder();
+
+            // Geocode our address
+            geocoder.geocode({ "218 Produce Row, San Antonio, TX 78207": mtCafeAddress }, function(results, status) {
+
+                // Check for a successful result
+                if (status == google.maps.GeocoderStatus.OK) {
+
+                    // Recenter the map over the address
+                    map.setCenter(results[0].geometry.location);
+                } else {
+
+                    // Show an error message with the status if our request fails
+                    alert("Geocoding was not successful - STATUS: " + status);
+                }
+            });
+
             var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
             var codeup = {lat: 29.426791, lng: -98.489602};
-            var codeUpMarker = new google.maps.Marker({
+
+            var marker = new google.maps.Marker({
                 position: codeup,
                 map: map
             });
-            var mtCafe = {lat: 29.4154934, lng: -98.5079414};
-            var mtCafeMarker = new google.maps.Marker({
-                position: mtCafe,
-                map: map,
-                icon: 'foodMarker.png'
-            });
-            var rosarios = {lat: 29.4154934, lng: -98.5079414};
-            var rosariosMarker = new google.maps.Marker({
-                position: rosarios,
-                map: map,
-                icon: 'foodMarker.png'
-            });
-            var tacoHaven = {lat: 29.4154934, lng: -98.5079414};
-            var tacoHavenMarker = new google.maps.Marker({
-                position: tacoHaven,
-                map: map,
-                icon: 'foodMarker.png'
-            });
+
+            var mtCafe = {lat: 29.42489665, lng: -98.49999825882006};
+            var mtCafeAddress = "218 Produce Row, San Antonio, TX 78207";
+
+            var rosarios = {lat: 29.415665, lng: -98.489538};
+            var rosariosAddress = "Rosario's, 910 S Alamo St, San Antonio, TX 78205";
+
+
+            var tacoHaven = {lat: 29.409983, lng: -98.486688};
+            var tacoHavenAddress = "Taco Haven, 1032 S Presa St, San Antonio, TX 78210";
+
+
             var infoWindowForMtCafe = new google.maps.InfoWindow({
                 content: 'This is the Mi Tierra Cafe!'
-            })
+            });
+
             marker.addEventListener('click', function () {
-                infoWindowForMtCafe.open(map, mtCafeMarker);
-            })
+                infoWindowForMtCafe.open(map, marker);
+            });
+
             var infowWindowForRosarios = new google.maps.InfoWindow({
                 content: 'This is Rosarios Cafe!'
-            })
+            });
+
             marker.addEventListener('click', function () {
-                infowWindowForRosarios.open(map, rosariosMarker);
-            })
+                infowWindowForRosarios.open(map, marker);
+            });
+
             var infoWindowForTacoHaven = new google.maps.Marker({
                 content: 'this is taco haven!'
-            })
+            });
+
             marker.addEventListener('click', function () {
-                infoWindowForTacoHaven.open(map, tacoHavenMarker);
-            })
+                infoWindowForTacoHaven.open(map, marker);
+            });
+
 
         })();
 
