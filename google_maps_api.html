@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        #map-canvas {
+            width: 770px;
+            height: 481px;
+        }
+    </style>
+</head>
+<body>
+    <!-- div to hold map -->
+    <div id="map-canvas"></div>
+    <!-- Load the Google Maps API [DON'T FORGET TO USE A KEY] -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbvWAIf0BwbDtlx1XbK8F3tCg9JTDjoko"></script>
+    <!-- Script to show address on map -->
+    <script type="text/javascript">
+        (function () {
+            "use strict";
+            // Set our map options
+            var mapOptions = {
+                // Set the zoom level
+                zoom: 18,
+                center: {lat: 29.4154934, lng: -98.5079414},
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+            var codeup = {lat: 29.426791, lng: -98.489602};
+            var codeUpMarker = new google.maps.Marker({
+                position: codeup,
+                map: map
+            });
+            var mtCafe = {lat: 29.4154934, lng: -98.5079414};
+            var mtCafeMarker = new google.maps.Marker({
+                position: mtCafe,
+                map: map,
+                icon: 'foodMarker.png'
+            });
+            var rosarios = {lat: 29.4154934, lng: -98.5079414};
+            var rosariosMarker = new google.maps.Marker({
+                position: rosarios,
+                map: map,
+                icon: 'foodMarker.png'
+            });
+            var tacoHaven = {lat: 29.4154934, lng: -98.5079414};
+            var tacoHavenMarker = new google.maps.Marker({
+                position: tacoHaven,
+                map: map,
+                icon: 'foodMarker.png'
+            });
+            var infoWindowForMtCafe = new google.maps.InfoWindow({
+                content: 'This is the Mi Tierra Cafe!'
+            })
+            marker.addEventListener('click', function () {
+                infoWindowForMtCafe.open(map, mtCafeMarker);
+            })
+            var infowWindowForRosarios = new google.maps.InfoWindow({
+                content: 'This is Rosarios Cafe!'
+            })
+            marker.addEventListener('click', function () {
+                infowWindowForRosarios.open(map, rosariosMarker);
+            })
+            var infoWindowForTacoHaven = new google.maps.Marker({
+                content: 'this is taco haven!'
+            })
+            marker.addEventListener('click', function () {
+                infoWindowForTacoHaven.open(map, tacoHavenMarker);
+            })
+
+        })();
+
+    </script>
+</body>
