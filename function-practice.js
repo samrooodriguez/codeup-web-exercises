@@ -80,3 +80,37 @@ function rectangleAreaCalculator(w, h){
 function rectangleVolume(w,h,l){
 return w*h*l;
 }
+// #########################################################################
+function timeStamp(){
+    return innerHTML= date();
+    console.log(date());
+}
+// #########################################################################
+var people = [
+    {name: "Sam",
+    age: 22,
+    height:"6'0"
+    },
+    {name: "Bob",
+        age: 25,
+        height:"6'9"
+    },
+    {name: "Jill",
+        age: 20,
+        height:"5'9"
+    },
+    {name: "Janet",
+        age: 55,
+        height:"4'11"
+    }
+];
+for(var i = 0; i < people.length; i++){
+    if(people[i].age < 30){
+        console.log(people[i] + "you're less than 30, wow");
+    }
+    console.log(people[i]);
+}
+
+
+
+
