@@ -36,66 +36,48 @@
     <script>
         (function () {
             "use strict";
-
-
-            // TODO: Uncomment next line and get the main header element by id
             var mainHeader = document.getElementById("main-header");
-
-            // TODO: Set inner html of mainHeader to "JavaScript is Cool"
             function changeHeader() {
                 mainHeader.innerHTML = "JavaScript is Cool";
             }
-
             mainHeader.addEventListener('click', changeHeader);
-
-            // TODO: Uncomment the next line and get the sub header element by id
             var subHeader = document.getElementById("sub-header");
-
-            // TODO: Set the text color of subHeader to blue
-
             function changeSubHeaderColor() {
                 subHeader.style.color = "#0066ff";
             }
-
             subHeader.addEventListener('click', changeSubHeaderColor);
-
-            // TODO: Uncomment the next line and get all list items
             var listItems = document.getElementsByTagName("li");
-            // TODO: Set text color on every other list item to grey
-
             for (var i = 0; i < listItems.length; i++) {
                 if (i % 2 !== 0) {
                     listItems[i].style.color = "#BEBEBE";
                 }
             }
-
-            // TODO: Set text color of li with dbid = 1 to blue
-
             function changeListItemColorToBlue() {
                 listItems[0].style.color = "#0066ff";
             }
-
             document.getElementById('btn1').addEventListener('click', changeListItemColorToBlue);
-
-            // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-
             var subParagraph = document.getElementsByClassName("sub-paragraph");
             console.log(subParagraph);
-
-            // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-
             function changeParagraphContents() {
                 subParagraph[0].innerHTML = "Mission accomplished!";
             }
             document.getElementById("btn2").addEventListener('click', changeParagraphContents);
 
+            var body = document.getElementsByName('body')[0];
 
-            function changeBackGroundColor(){
-            document.getElementsByName('body').style.backgroundColor = '#0066ff';
+            function changeBackGroundColor() {
+                body.style.backgroundColor = '#0066ff';
             }
 
-            document.getElementById('btn3').addEventListener('click', changeBackGroundColor);
-
+            function changeBackgroundColorToggle() {
+                if (body.style.backgroundColor == '#FFF') {
+                    changeBackGroundColor();
+                }
+                else if (body.style.backgroundColor == '#0066ff'){
+                    body.style.backgroundColor = '#FFF';
+                }
+            }
+            document.getElementById('btn3').addEventListener('click', changeBackgroundColorToggle);
         })();
     </script>
 </body>
