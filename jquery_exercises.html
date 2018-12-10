@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>jquery exercise</title>
 <!--jquery link-->
-    <script src="/js/jquery-2.x-git.js"></script>
 </head>
 <body>
     <h1 id="main-header">HELLO WORLD!!!</h1>
@@ -38,8 +37,11 @@
         <li>list item 5</li>
         <li>list item 6</li>
     </ul>
-<script>
-    $(document).ready = function() {
+    <!--jquery link-->
+    <script src="js/jquery-2.x-git.js"></script>
+
+    <script>
+    $(document).ready ( function() {
         alert('The page has finished loading!');
 
         var contents = $(' #main-header ').html();
@@ -48,10 +50,10 @@
         var subContents = $(' #sub-header ');
         alert(subContents);
 
-        (' .codeup ').css('border', 'solid', '.1px', '#ff0000');
+        $(' .codeup ').css('border', 'solid 1px red');
 
         $(' li ').css('font-size', '20px');
-    };
+    });
     var h1Contents = $('h1');
     alert(h1Contents);
 </script>
