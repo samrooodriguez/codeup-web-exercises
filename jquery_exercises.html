@@ -7,10 +7,53 @@
     <script src="/js/jquery-2.x-git.js"></script>
 </head>
 <body>
+    <h1 id="main-header">HELLO WORLD!!!</h1>
+
+    <h2 id="sub-header">This is definitely an h2.</h2>
+
+    <h3 id="sub-sub-header">presumably, this is an h3.</h3>
+
+    <p class="codeup">This is a paragraph, and this is also still a paragraph. The quick brown fox, jumps over the lazy brown dog.
+        This is a paragraph, and this is also still a paragraph. The quick brown fox, jumps over the lazy brown dog.
+        This is a paragraph, and this is also still a paragraph. The quick brown fox, jumps over the lazy brown dog.
+        This is a paragraph, and this is also still a paragraph. The quick brown fox, jumps over the lazy brown dog.
+<br>
+        This is a paragraph, and this is also still a paragraph. The quick brown fox, jumps over the lazy brown dog.
+        This is a paragraph, and this is also still a paragraph. The quick brown fox, jumps over the lazy brown dog.
+        This is a paragraph, and this is also still a paragraph. The quick brown fox, jumps over the lazy brown dog.
+        This is a paragraph, and this is also still a paragraph. The quick brown fox, jumps over the lazy brown dog.
+        This is a paragraph, and this is also still a paragraph. The quick brown fox, jumps over the lazy brown dog.
+    </p>
+
+    <div class="codeup">
+        <h6>this is a div holding an h6</h6>
+    </div>
+
+<h1 class="codeup">this is an unordered list</h1>
+    <ul>
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+        <li>list item 4</li>
+        <li>list item 5</li>
+        <li>list item 6</li>
+    </ul>
 <script>
-    window.onload = function() {
-        alert( 'The page has finished loading!' );
-    }
+    $(document).ready = function() {
+        alert('The page has finished loading!');
+
+        var contents = $(' #main-header ').html();
+        alert(contents);
+
+        var subContents = $(' #sub-header ');
+        alert(subContents);
+
+        (' .codeup ').css('border', 'solid', '.1px', '#ff0000');
+
+        $(' li ').css('font-size', '20px');
+    };
+    var h1Contents = $('h1');
+    alert(h1Contents);
 </script>
 </body>
 </html>
