@@ -30,7 +30,7 @@
             if (key == requiredKey) {
                 konamiCodePosition++;
                 if (konamiCodePosition == konamiCode.length) {
-                    alert('You have added 30 lives!');
+                    $('body').css('background-color', 'red');
                     konamiCodePosition = 0;
                 }
             } else {
