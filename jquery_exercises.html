@@ -91,6 +91,24 @@
                     $(this).css('color', '');
                 }
             );
+
+            $('.codeup').dblclick(function () {
+                $(this).css('font-size', '200px');
+            });
+
+            $('.paragraph-three').hover(
+                function () {
+                    $(this).css('background-color', 'black');
+                    $(this).css('font-family', "monospace");
+                    $(this).css('color','white');
+                },
+                function () {
+                    $(this).removeAttr('style');
+
+
+                }
+            );
+
         });
 
     </script>
