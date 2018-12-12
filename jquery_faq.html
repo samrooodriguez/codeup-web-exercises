@@ -156,15 +156,12 @@
     <script src="js/jquery-2.x-git.js"></script>
     <script>
 
-        $('body').ready(
             $('#yellow-button').click(function () {
-               $('ul').each(function () {
-                   $("li").each(function () {
-                       $(this).last().css('background-color', 'yellow');
-                   })
-               })
-            }
-        ));
+               $('ul >li:last-child').css('background-color', 'yellow');
+            });
+            $('h3').click(function () {
+                $('ul >li').css('font-weight', 'bolder')
+            })
 
     </script>
 </body>
