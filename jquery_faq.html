@@ -153,7 +153,7 @@
     </style>
 </head>
 <body>
-
+    <h2 id="register">would you care to register for this site<span><button>Yes</button><button>No</button></span></h2>
 
     <h3 id="national-parks-heading">National Parks</h3>
     <ul id="national-parks">
@@ -180,18 +180,21 @@
         <li>Pinnacles</li>
         <li>Big Sur</li>
     </ul>
-    <button id="yellow-button">Make the background of the last list item yellow in each list</button>
+    <button id="yellow-button">HIGHLIGHT THE GOODIES</button>
     <script src="js/jquery-2.x-git.js"></script>
     <script>
 
+        $('#register').fadeIn().fadeToggle(2500);
+
         $('#yellow-button').click(function () {
             $('ul >li:last-child').css('background-color', 'yellow');
+            $(this).removeAttr('style');
         });
+        $('h3').next().children().hide();
         $('h3').click(function () {
             $('ul >li').css('font-weight', 'bolder');
             $('h3').next().children().slideToggle('invisible');
         });
-
 
     </script>
 </body>
