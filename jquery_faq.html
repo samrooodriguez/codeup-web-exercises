@@ -194,8 +194,11 @@
         });
         $('h3').next().children().hide();
         $('h3').click(function () {
-            $('ul >li').css('font-weight', 'bolder');
+            // $('ul >li').css('font-weight', 'bolder');
             $('h3').next().children().slideToggle('invisible');
+        });
+        $('li').dblclick(function () {
+            $('li').css('font-weight', 'bolder');
         });
 
         var allowedKeys = { 37: 'left', 38: 'up', 39: 'right', 40: 'down', 65: 'a', 66: 'b'};
