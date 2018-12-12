@@ -134,7 +134,7 @@
 
         $('dd').addClass('invisible');
         $('dt').click(function () {
-            $(this).next().toggleClass('invisible')
+            $(this).next().slideToggle('invisible')
         });
     </script>
 </body>
@@ -153,6 +153,7 @@
     </style>
 </head>
 <body>
+
     <h2 id="register">would you care to register for this site<span><button>Yes</button><button>No</button></span></h2>
 
     <h3 id="national-parks-heading">National Parks</h3>
@@ -183,8 +184,9 @@
     <button id="yellow-button">HIGHLIGHT THE GOODIES</button>
     <script src="js/jquery-2.x-git.js"></script>
     <script>
-
-        $('#register').fadeIn().fadeToggle(2500);
+        setTimeout(function () {
+            $('#register').hide().fadeIn(8000);
+        }, 0);
 
         $('#yellow-button').click(function () {
             $('ul >li:last-child').css('background-color', 'yellow');
@@ -196,6 +198,22 @@
             $('h3').next().children().slideToggle('invisible');
         });
 
+        var allowedKeys = { 37: 'left', 38: 'up', 39: 'right', 40: 'down', 65: 'a', 66: 'b'};
+        var konamiCode = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'b', 'a'];
+        var konamiCodePosition = 0;
+        document.addEventListener('keydown', function (e) {
+            var key = allowedKeys[e.keyCode];
+            var requiredKey = konamiCode[konamiCodePosition];
+            if (key == requiredKey) {
+                konamiCodePosition++;
+                if (konamiCodePosition == konamiCode.length) {
+                    document.write('kick rocks, Hackers!');
+                    konamiCodePosition = 0;
+                }
+            } else {
+                konamiCodePosition = 0;
+            }
+        });
     </script>
 </body>
 </html>
