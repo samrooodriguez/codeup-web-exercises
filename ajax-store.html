@@ -2,6 +2,9 @@
 <html>
 <head>
     <title>Online Store</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
 </head>
 <body>
 
@@ -20,14 +23,16 @@
     <button id="refreshButton">Refresh List</button>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
 
     <script>
         (function () {
             "use strict";
             // TODO: Create an ajax GET request for /data/inventory.json
-                var table = "";
+            var table = "";
 
-            function runTable(){
+            function runTable() {
                 $.get("data/inventory.json")
 
                     .done(function (inventory) {
@@ -37,24 +42,24 @@
                             console.log(item.quantity);
                             console.log(item.categories);
                             console.log(item.price);
-                            table += "<tr>";
+                            table += "<div class= 'container'>";
                             table += "<td>" + item.title + "</td>";
                             table += "<td>" + item.quantity + "</td>";
                             table += "<td>" + item.price + "</td>";
                             table += "<td>" + item.categories + "</td>";
                             table += "</tr>";
+                            table += "</div>";
                         });
-                            $("#insertProducts").html(table);
+                        $("#insertProducts").html(table);
                     })
             }
-                            runTable();
 
-                        $("#refreshButton").click(function () {
-                            table = " ";
-                            runTable();
-                        })
+            runTable();
 
-
+            $("#refreshButton").click(function () {
+                table = " ";
+                runTable();
+            })
 
 
         })();
