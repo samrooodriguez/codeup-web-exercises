@@ -37,14 +37,12 @@
                             console.log(item.quantity);
                             console.log(item.categories);
                             console.log(item.price);
-
                             table += "<tr>";
                             table += "<td>" + item.title + "</td>";
                             table += "<td>" + item.quantity + "</td>";
                             table += "<td>" + item.price + "</td>";
                             table += "<td>" + item.categories + "</td>";
                             table += "</tr>";
-
                         });
                             $("#insertProducts").html(table);
                     })

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax Blog</title>
+</head>
+<body>
+    <div id="wall"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+    "use strict";
+    var post = "";
+    $.get("data/blog.json")
+
+        .done(function (posts) {
+            posts.forEach(function (item) {
+                console.log(item.title);
+                console.log(item.content);
+                console.log(item.categories);
+                console.log(item.date);
+
+                post += "<h1>" + item.title + "</h1>";
+                post += "<p>" + item.content + "</p>";
+                post += "<h4>" + item.categories + "</h4>";
+                post += "<h5>" + item.date + "</h5>";
+
+                $('#wall').html(post);
+            })
+
+    })
+</script>
+</body>
+</html>
