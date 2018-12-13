@@ -14,10 +14,10 @@
             <th>Quantity</th>
             <th>Price</th>
             <th>Categories</th>
-        </tr>
         </thead>
         <tbody id="insertProducts"></tbody>
     </table>
+    <button id="refreshButton">Refresh List</button>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
@@ -25,15 +25,39 @@
         (function () {
             "use strict";
             // TODO: Create an ajax GET request for /data/inventory.json
+                var table = "";
 
-            $.ajax("data/inventory.json");
+            function runTable(){
+                $.get("data/inventory.json")
+
+                    .done(function (inventory) {
+
+                        inventory.forEach(function (item) {
+                            console.log(item.title);
+                            console.log(item.quantity);
+                            console.log(item.categories);
+                            console.log(item.price);
+
+                            table += "<tr>";
+                            table += "<td>" + item.title + "</td>";
+                            table += "<td>" + item.quantity + "</td>";
+                            table += "<td>" + item.price + "</td>";
+                            table += "<td>" + item.categories + "</td>";
+                            table += "</tr>";
+
+                        });
+                            $("#insertProducts").html(table);
+                    })
+            }
+                            runTable();
+
+                        $("#refreshButton").click(function () {
+                            table = " ";
+                            runTable();
+                        })
 
 
-            // TODO: Take the data from inventory.json and append it to the products table
-            //       HINT: Your data should come back as a JSON object; use console.log() to inspect
-            //             its contents and fields
-            //       HINT: You will want to target #insertProducts for your new HTML elements
-            
+
 
         })();
     </script>
