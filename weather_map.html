@@ -2,52 +2,126 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Weather Application</title>
 </head>
 <body>
+
     <h1>Weather Application</h1>
+
+    <div id="LocationSearch">
+
+        <input id="searchLat" type="text" placeholder="Search Lat..." required>
+
+        <input id="searchLon" type="text" placeholder="Search Lon..." required>
+
+
+        <button id="searchButton" type="submit">Go!</button>
+        <!--latitude 29.4268486 -->
+        <!-- longitude -98.48961349999999-->
+    </div>
+
     <div id="weather"></div>
+    <!--Google map canvoos-->
+    <canvas id="mapCanvas" width="200" height="100"></canvas>
+
+
+    <!-- Load the Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_70YXvXz-8j3-d7PGY8DKkfxtIvyW9dg"></script>
+
+    <!--google maps api key-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_70YXvXz-8j3-d7PGY8DKkfxtIvyW9dg"></script>
+
+    <!--api key a4e920906d10f5ca2cfa3a7a2d73d720-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <!--JS-->
     <script>
         "use strict";
-        var weatherCard = "";
+        $('#searchButton').click(function () {
 
+            var weatherCard = "";
+            var lonSearch = $('#searchLon').val();
+            var latSearch = $('#searchLat').val();
 
+            //Maps API
+            function mapSearch() {
+                $.get('http://api.openweathermap.org/data/2.5/forecast', {
+                    APPID: 'a4e920906d10f5ca2cfa3a7a2d73d720',
+                    lat: latSearch,
+                    lon: lonSearch,
+                    units: "imperial"
+                }).done(function (weather) {
+                    //header info
+                    var d = new Date();
+                    var dat = d.getDate();
+                    weatherCard += "<h1>" + weather.city.name + "  3-day forecast" + "</h1>";
+                    weatherCard += "<h1>" + "Location: " + weather.city.name + "</h1>";
+                    //    xDay forecast
+                    for (var i = 0; i <= 16; i += 8) {
+                        weatherCard += "<hr>";
+                        weatherCard += "<h2>" + "Date: " + (dat++) + "</h2>";
+                        weatherCard += "<h2>" + "Temperature: " + Math.floor(weather.list[i].main.temp) + "˚F" + "</h2>";
+                        weatherCard += "<h3>" + "Clouds: " + weather.list[i].clouds.all + "</h3>";
+                        weatherCard += "<h3>" + "Humidity: " + weather.list[i].main.humidity + "%" + "</h3>";
+                        weatherCard += "<h3>" + "Wind: " + weather.list[i].wind.speed + "mph" + "</h3>";
+                        weatherCard += "<h3>" + "Pressure: " + weather.list[i].main.pressure + "mbar" + "</h3>";
+                    }
+                    //display info in the html
+                    $('#weather').html(weatherCard);
+                });
+            }
 
-        // for(var i = 0; i<list.length; i++){
-        //     if (i % 2 === 0){
-        //         console.log(weather.cit)
-        //     }
-        // }
+            mapSearch();
+        });
 
-        $.ajax('http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=a4e920906d10f5ca2cfa3a7a2d73d720&units=imperial')
-            .done(function(weather){
-                //name
-                console.log("Name:" + weather.city.name);
-                //clouds
-                console.log("Clouds:" + weather.list[0].clouds.all);
-                //humidity
-                console.log("Humidity:" + weather.list[0].main.humidity);
-                //wind
-                console.log("Wind" + weather.list[0].wind.speed);
-                //pressure
-                console.log("Pressure:" + weather.list[0].main.pressure);
+        // // GOOGLE MAP ---------------------------------------------------------------------------------------------------------------------------------
+        // $(document).onload(function (){
+        //
+        //     // Set our map options
+        //     var mapOptions = {
+        //
+        //         // Set the zoom level
+        //         zoom: 18,
+        //         center: {lat: 29.4154934, lng: -98.5079414},
+        //         mapTypeId: google.maps.MapTypeId.ROADMAP
+        //     };
+        //
+        //     var geocoder = new google.maps.Geocoder();
+        //
+        //     // Geocode our address
+        //     geocoder.geocode({"218 Produce Row, San Antonio, TX 78207": mtCafeAddress}, function (results, status) {
+        //
+        //         // Check for a successful result
+        //         if (status == google.maps.GeocoderStatus.OK) {
+        //
+        //             // Recenter the map over the address
+        //             map.setCenter(results[0].geometry.location);
+        //         } else {
+        //
+        //             // Show an error message with the status if our request fails
+        //             alert("Geocoding was not successful - STATUS: " + status);
+        //         }
+        //     });
+        //     var map = new google.maps.Map(document.getElementById("mapCanvas"), mapOptions);
+        //
+        //     var codeup = {lat: 29.426791, lng: -98.489602};
+        //
+        //     var marker = new google.maps.Marker({
+        //         position: codeup,
+        //         map: map
+        //     });
+        //
+        //     var rosarios = {lat: 29.415665, lng: -98.489538};
+        //
+        //     var rosariosAddress = "Rosario's, 910 S Alamo St, San Antonio, TX 78205";
+        //
+        //     var infoWindowForMtCafe = new google.maps.InfoWindow({
+        //         content: 'This is the Mi Tierra Cafe!'
+        //     });
+        //     marker.addEventListener('click', function () {
+        //         infoWindowForMtCafe.open(map, marker);
+        //     })})
 
-                weatherCard += "<h1>"+ "Location: " +weather.city.name + "</h1>";
-                weatherCard += "<h2>" + "Temperature: " +  weather.list[0].main.temp + "˚F" + "</h2>";
-                weatherCard += "<h3>"+ "Clouds: " + weather.list[0].clouds.all + "</h3>";
-                weatherCard += "<h3>"+ "Humidity: " + weather.list[0].main.humidity + "%" + "</h3>";
-                weatherCard += "<h3>"+ "Wind: " + weather.list[0].wind.speed + "mph" + "</h3>";
-                weatherCard += "<h3>" + "Pressure: " + weather.list[0].main.pressure + "mbar" + "</h3>";
-
-
-
-
-                console.log(weather);
-
-                $('#weather').html(weatherCard);
-
-            });
     </script>
 </body>
 </html>
