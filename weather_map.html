@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Weather Application</h1>
+    <div id="weather"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+        "use strict";
+        var weatherCard = "";
+
+
+
+        // for(var i = 0; i<list.length; i++){
+        //     if (i % 2 === 0){
+        //         console.log(weather.cit)
+        //     }
+        // }
+
+        $.ajax('http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=a4e920906d10f5ca2cfa3a7a2d73d720&units=imperial')
+            .done(function(weather){
+                //name
+                console.log("Name:" + weather.city.name);
+                //clouds
+                console.log("Clouds:" + weather.list[0].clouds.all);
+                //humidity
+                console.log("Humidity:" + weather.list[0].main.humidity);
+                //wind
+                console.log("Wind" + weather.list[0].wind.speed);
+                //pressure
+                console.log("Pressure:" + weather.list[0].main.pressure);
+
+                weatherCard += "<h1>"+ "Location: " +weather.city.name + "</h1>";
+                weatherCard += "<h2>" + "Temperature: " +  weather.list[0].main.temp + "˚F" + "</h2>";
+                weatherCard += "<h3>"+ "Clouds: " + weather.list[0].clouds.all + "</h3>";
+                weatherCard += "<h3>"+ "Humidity: " + weather.list[0].main.humidity + "%" + "</h3>";
+                weatherCard += "<h3>"+ "Wind: " + weather.list[0].wind.speed + "mph" + "</h3>";
+                weatherCard += "<h3>" + "Pressure: " + weather.list[0].main.pressure + "mbar" + "</h3>";
+
+
+
+
+                console.log(weather);
+
+                $('#weather').html(weatherCard);
+
+            });
+    </script>
+</body>
+</html>
