@@ -12,23 +12,15 @@
 
         <input id="searchLat" type="text" placeholder="Search Lat..." required>
 
-        <input id="searchLon" type="text" placeholder="Search Lon..." required>
+            <input id="searchLon" type="text" placeholder="Search Lon..." required>
 
+                 <button id="searchButton" type="submit">Go!</button>
 
-        <button id="searchButton" type="submit">Go!</button>
-        <!--latitude 29.4268486 -->
-        <!-- longitude -98.48961349999999-->
     </div>
 
     <div id="weather"></div>
-    <!--Google map canvoos-->
-    <canvas id="mapCanvas" width="200" height="100"></canvas>
-
 
     <!-- Load the Google Maps API -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_70YXvXz-8j3-d7PGY8DKkfxtIvyW9dg"></script>
-
-    <!--google maps api key-->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_70YXvXz-8j3-d7PGY8DKkfxtIvyW9dg"></script>
 
     <!--api key a4e920906d10f5ca2cfa3a7a2d73d720-->
@@ -43,7 +35,6 @@
             var lonSearch = $('#searchLon').val();
             var latSearch = $('#searchLat').val();
 
-            //Maps API
             function mapSearch() {
                 $.get('http://api.openweathermap.org/data/2.5/forecast', {
                     APPID: 'a4e920906d10f5ca2cfa3a7a2d73d720',
@@ -63,65 +54,15 @@
                         weatherCard += "<h2>" + "Temperature: " + Math.floor(weather.list[i].main.temp) + "˚F" + "</h2>";
                         weatherCard += "<h3>" + "Clouds: " + weather.list[i].clouds.all + "</h3>";
                         weatherCard += "<h3>" + "Humidity: " + weather.list[i].main.humidity + "%" + "</h3>";
-                        weatherCard += "<h3>" + "Wind: " + weather.list[i].wind.speed + "mph" + "</h3>";
+                        weatherCard += "<h3>" + "Wind: " + Math.floor(weather.list[i].wind.speed) + "mph" + "</h3>";
                         weatherCard += "<h3>" + "Pressure: " + weather.list[i].main.pressure + "mbar" + "</h3>";
                     }
                     //display info in the html
                     $('#weather').html(weatherCard);
                 });
             }
-
             mapSearch();
         });
-
-        // // GOOGLE MAP ---------------------------------------------------------------------------------------------------------------------------------
-        // $(document).onload(function (){
-        //
-        //     // Set our map options
-        //     var mapOptions = {
-        //
-        //         // Set the zoom level
-        //         zoom: 18,
-        //         center: {lat: 29.4154934, lng: -98.5079414},
-        //         mapTypeId: google.maps.MapTypeId.ROADMAP
-        //     };
-        //
-        //     var geocoder = new google.maps.Geocoder();
-        //
-        //     // Geocode our address
-        //     geocoder.geocode({"218 Produce Row, San Antonio, TX 78207": mtCafeAddress}, function (results, status) {
-        //
-        //         // Check for a successful result
-        //         if (status == google.maps.GeocoderStatus.OK) {
-        //
-        //             // Recenter the map over the address
-        //             map.setCenter(results[0].geometry.location);
-        //         } else {
-        //
-        //             // Show an error message with the status if our request fails
-        //             alert("Geocoding was not successful - STATUS: " + status);
-        //         }
-        //     });
-        //     var map = new google.maps.Map(document.getElementById("mapCanvas"), mapOptions);
-        //
-        //     var codeup = {lat: 29.426791, lng: -98.489602};
-        //
-        //     var marker = new google.maps.Marker({
-        //         position: codeup,
-        //         map: map
-        //     });
-        //
-        //     var rosarios = {lat: 29.415665, lng: -98.489538};
-        //
-        //     var rosariosAddress = "Rosario's, 910 S Alamo St, San Antonio, TX 78205";
-        //
-        //     var infoWindowForMtCafe = new google.maps.InfoWindow({
-        //         content: 'This is the Mi Tierra Cafe!'
-        //     });
-        //     marker.addEventListener('click', function () {
-        //         infoWindowForMtCafe.open(map, marker);
-        //     })})
-
     </script>
 </body>
 </html>
