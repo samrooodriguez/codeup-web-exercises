@@ -1,0 +1,26 @@
+body{
+    background-color: #3B94D9;
+}
+#map{
+    height: 40em;
+    width: 74%;
+    float: right;
+}
+#weather{
+    border: solid 2px black;
+    width: 24%;
+    background-color: #848487;
+    color: #F7F7F7;
+    font-size: 10px;
+    float: left;
+
+}
+#appName{
+    letter-spacing: 1em;
+    margin-left: 40px;
+    margin-right: 40px;
+    font-family: "Apple SD Gothic Neo", monospace;
+    color: #F7F7F7;
+    width: 100%;
+    font-size: 3em;
+}
