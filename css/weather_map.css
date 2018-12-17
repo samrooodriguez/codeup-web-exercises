@@ -1,15 +1,16 @@
 body{
-    background-color: #3B94D9;
+    background-color: #17263C;
 }
 #map{
     height: 40em;
     width: 74%;
     float: right;
+    border: solid 8px #242F3E;
 }
 #weather{
-    border: solid 2px black;
+    border: solid 2px #242F3E;
     width: 24%;
-    background-color: #848487;
+    background-color: #242F3E;
     color: #F7F7F7;
     font-size: 10px;
     float: left;
@@ -23,4 +24,8 @@ body{
     color: #F7F7F7;
     width: 100%;
     font-size: 3em;
+}
+br{
+    height: 1em;
+    background-color: #F7F7F7;
 }
