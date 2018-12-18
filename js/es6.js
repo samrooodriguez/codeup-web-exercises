@@ -51,6 +51,7 @@ const languages = [];
 //     email: email,
 //     languages: languages
 // });
+//########################################
 let name = "";
 $('#submit-button').on('click', (event) => {
     $('#name-input').on('input', (event) => {
@@ -66,13 +67,13 @@ let newUser = {
 $('button').on('click', (newUser) => {
     users.push(newUser);
 });
+//########################################
 // TODO: replace `var` with `let` in the following variable declarations - done
 
 let emails = [];
 let names = [];
 
 // TODO: rewrite the following using arrow functions - done
-
 users.forEach((user) => {
     return emails.push(user.email);
 });
@@ -92,23 +93,25 @@ users.forEach(function (user) {
     // const name = user.name;
     // const email = user.email;
     // const languages = user.languages;
+
+    const {name, email, languages} = user;
 // TODO: rewrite the assignment below to use template strings - done
 
 //     developers.push(name + '\'s email is ' + email + name + ' knows ' + languages.join(', '));
 // });
 
-developers.push(`${name}'s email is ${email}${name} knows ${languages.join(',')}`);
+    developers.push(`${name}'s email is ${email}${name} knows ${languages.join(',')}`);
 
 
 // TODO: Use `let` for the following variable - done
-let list = '<ul>';
+    let list = '<ul>';
 
 // TODO: rewrite the following loop to use a for..of loop - done
 //    for(let ELEMENT of ITERABLE) {
 //          code~code~code~
 // }
 // developers.forEach(function (developer) {
-    for(let developer of developers){
+    for (let developer of developers) {
 
     }
     // TODO: rewrite the assignment below to use template strings
